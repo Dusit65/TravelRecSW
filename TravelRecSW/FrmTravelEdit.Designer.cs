@@ -56,22 +56,23 @@
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.toolStripLabel1.Size = new System.Drawing.Size(126, 0);
+            this.toolStripLabel1.Size = new System.Drawing.Size(169, 0);
             this.toolStripLabel1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
             // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtSave,
             this.tsbtCancel,
             this.toolStripLabel1,
             this.toolStripSeparator1,
             this.tsbtToFrmLogin});
-            this.toolStrip1.Location = new System.Drawing.Point(473, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(630, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(128, 335);
+            this.toolStrip1.Size = new System.Drawing.Size(171, 412);
             this.toolStrip1.TabIndex = 54;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -80,7 +81,7 @@
             this.tsbtSave.Image = global::TravelRecSW.Properties.Resources.save;
             this.tsbtSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtSave.Name = "tsbtSave";
-            this.tsbtSave.Size = new System.Drawing.Size(126, 20);
+            this.tsbtSave.Size = new System.Drawing.Size(169, 24);
             this.tsbtSave.Text = "บันทึก";
             this.tsbtSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -89,21 +90,21 @@
             this.tsbtCancel.Image = global::TravelRecSW.Properties.Resources.cancel;
             this.tsbtCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtCancel.Name = "tsbtCancel";
-            this.tsbtCancel.Size = new System.Drawing.Size(126, 20);
+            this.tsbtCancel.Size = new System.Drawing.Size(169, 24);
             this.tsbtCancel.Text = "ยกเลิก";
             this.tsbtCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(126, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(169, 6);
             // 
             // tsbtToFrmLogin
             // 
             this.tsbtToFrmLogin.Image = global::TravelRecSW.Properties.Resources.logo;
             this.tsbtToFrmLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtToFrmLogin.Name = "tsbtToFrmLogin";
-            this.tsbtToFrmLogin.Size = new System.Drawing.Size(126, 20);
+            this.tsbtToFrmLogin.Size = new System.Drawing.Size(169, 24);
             this.tsbtToFrmLogin.Text = "การเดินทางของฉัน";
             this.tsbtToFrmLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -111,17 +112,19 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pbTravelImage);
-            this.panel1.Location = new System.Drawing.Point(295, 113);
+            this.panel1.Location = new System.Drawing.Point(393, 139);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(123, 152);
+            this.panel1.Size = new System.Drawing.Size(163, 187);
             this.panel1.TabIndex = 53;
             // 
             // pbTravelImage
             // 
             this.pbTravelImage.Image = global::TravelRecSW.Properties.Resources.logo;
-            this.pbTravelImage.Location = new System.Drawing.Point(3, 3);
+            this.pbTravelImage.Location = new System.Drawing.Point(4, 4);
+            this.pbTravelImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbTravelImage.Name = "pbTravelImage";
-            this.pbTravelImage.Size = new System.Drawing.Size(115, 144);
+            this.pbTravelImage.Size = new System.Drawing.Size(153, 177);
             this.pbTravelImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbTravelImage.TabIndex = 1;
             this.pbTravelImage.TabStop = false;
@@ -129,73 +132,82 @@
             // btSelectTravelImage
             // 
             this.btSelectTravelImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSelectTravelImage.Location = new System.Drawing.Point(295, 271);
+            this.btSelectTravelImage.Location = new System.Drawing.Point(393, 334);
+            this.btSelectTravelImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btSelectTravelImage.Name = "btSelectTravelImage";
-            this.btSelectTravelImage.Size = new System.Drawing.Size(123, 33);
+            this.btSelectTravelImage.Size = new System.Drawing.Size(164, 41);
             this.btSelectTravelImage.TabIndex = 52;
             this.btSelectTravelImage.Text = "เลือกรูปการเดินทาง";
             this.btSelectTravelImage.UseVisualStyleBackColor = true;
             // 
             // dtpTravelEndDate
             // 
-            this.dtpTravelEndDate.Location = new System.Drawing.Point(66, 226);
+            this.dtpTravelEndDate.Location = new System.Drawing.Point(88, 278);
+            this.dtpTravelEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpTravelEndDate.Name = "dtpTravelEndDate";
-            this.dtpTravelEndDate.Size = new System.Drawing.Size(188, 20);
+            this.dtpTravelEndDate.Size = new System.Drawing.Size(249, 22);
             this.dtpTravelEndDate.TabIndex = 51;
             // 
             // dtpTravelStartDate
             // 
-            this.dtpTravelStartDate.Location = new System.Drawing.Point(66, 173);
+            this.dtpTravelStartDate.Location = new System.Drawing.Point(88, 213);
+            this.dtpTravelStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpTravelStartDate.Name = "dtpTravelStartDate";
-            this.dtpTravelStartDate.Size = new System.Drawing.Size(188, 20);
+            this.dtpTravelStartDate.Size = new System.Drawing.Size(249, 22);
             this.dtpTravelStartDate.TabIndex = 50;
             // 
             // tbTravelCostTotal
             // 
-            this.tbTravelCostTotal.Location = new System.Drawing.Point(66, 284);
+            this.tbTravelCostTotal.Location = new System.Drawing.Point(88, 350);
+            this.tbTravelCostTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTravelCostTotal.Name = "tbTravelCostTotal";
-            this.tbTravelCostTotal.Size = new System.Drawing.Size(188, 20);
+            this.tbTravelCostTotal.Size = new System.Drawing.Size(249, 22);
             this.tbTravelCostTotal.TabIndex = 49;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(66, 260);
+            this.label4.Location = new System.Drawing.Point(88, 320);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 20);
+            this.label4.Size = new System.Drawing.Size(212, 25);
             this.label4.TabIndex = 48;
             this.label4.Text = "ค่าใช้จ่ายตลอดการเดินทาง (บาท)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(66, 202);
+            this.label5.Location = new System.Drawing.Point(88, 249);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 20);
+            this.label5.Size = new System.Drawing.Size(212, 25);
             this.label5.TabIndex = 47;
             this.label5.Text = "วันที่เดินทางกลับ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbTravelPlace
             // 
-            this.tbTravelPlace.Location = new System.Drawing.Point(66, 126);
+            this.tbTravelPlace.Location = new System.Drawing.Point(88, 155);
+            this.tbTravelPlace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTravelPlace.Name = "tbTravelPlace";
-            this.tbTravelPlace.Size = new System.Drawing.Size(188, 20);
+            this.tbTravelPlace.Size = new System.Drawing.Size(249, 22);
             this.tbTravelPlace.TabIndex = 46;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(66, 149);
+            this.label3.Location = new System.Drawing.Point(88, 183);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 20);
+            this.label3.Size = new System.Drawing.Size(212, 25);
             this.label3.TabIndex = 45;
             this.label3.Text = "วันที่เดินทางไป";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(66, 102);
+            this.label2.Location = new System.Drawing.Point(88, 126);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 20);
+            this.label2.Size = new System.Drawing.Size(212, 25);
             this.label2.TabIndex = 44;
             this.label2.Text = "สถานที่ที่เดินทางไป";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -205,18 +217,19 @@
             this.label1.BackColor = System.Drawing.Color.Yellow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(35, 29);
+            this.label1.Location = new System.Drawing.Point(47, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(413, 48);
+            this.label1.Size = new System.Drawing.Size(551, 59);
             this.label1.TabIndex = 43;
             this.label1.Text = "การเดินทางของฉัน (แก้ไข)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmTravelEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 335);
+            this.ClientSize = new System.Drawing.Size(801, 412);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btSelectTravelImage);
@@ -231,10 +244,12 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FrmTravelEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "แก้ไขการเดินทาง - Travel Rec SW V.1.0";
+            this.Load += new System.EventHandler(this.FrmTravelEdit_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);

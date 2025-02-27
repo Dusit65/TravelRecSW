@@ -40,37 +40,38 @@ namespace TravelRecSW
             else
             {
                 //Save to DB
-                //connect to DB
+                //Connect to DB
                 SqlConnection conn = new SqlConnection(ShareInfo.conStr);
                 if (conn.State == ConnectionState.Open)
                 {
                     conn.Close();
                 }
                 conn.Open();
-                //sql command
+                //===============================================================
+                //SQL command
                 string strSql = "SELECT * FROM traveller_tb WHERE " +
                                 "travellerEmail = @travellerEmail and " + 
                                 "travellerPassword = @travellerPassword";
-
-                //create sql transaction and sql command for working with SQL
+                //===============================================================
+                //Create sql transaction and sql command for working with SQL
                 SqlTransaction sqlTransaction = conn.BeginTransaction();
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = conn;
                 sqlCommand.CommandType = CommandType.Text;
                 sqlCommand.CommandText = strSql;
                 sqlCommand.Transaction = sqlTransaction;
-
-                //bindParam
+                //===============================================================
+                //BindParam
                 sqlCommand.Parameters.AddWithValue("@travellerEmail", tbTravellerEmail.Text.Trim());
                 sqlCommand.Parameters.AddWithValue("@travellerPassword", tbTravellerPassword.Text.Trim());
-
-                //run SQL
+                //===============================================================
+                //Run SQL
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
                 conn.Close();
 
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-
+                //===============================================================
                 if (dt.Rows.Count > 0) 
                 {
                     //packing data to shareInfo

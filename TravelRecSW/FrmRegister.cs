@@ -112,11 +112,13 @@ namespace TravelRecSW
                     conn.Close();
                 }
                 conn.Open();
+                //===============================================================
                 //SQL command
                 string strSql = "INSERT INTO traveller_tb" +
                                 "(travellerFullname, travellerEmail, travellerPassword, travellerImage)" +
                                 "VALUES " + 
                                  "(@travellerFullname, @travellerEmail, @travellerPassword, @travellerImage)";
+                //===============================================================
                 //create sql transaction and sql command for working with SQL
                 SqlTransaction sqlTransaction = conn.BeginTransaction();
                 SqlCommand sqlCommand = new SqlCommand();
@@ -124,13 +126,13 @@ namespace TravelRecSW
                 sqlCommand.CommandType = CommandType.Text;
                 sqlCommand.CommandText = strSql;
                 sqlCommand.Transaction = sqlTransaction;
-
+                //===============================================================
                 //bindParam
                 sqlCommand.Parameters.AddWithValue("@travellerFullname", tbTravellerFullname.Text.Trim());
                 sqlCommand.Parameters.AddWithValue("@travellerEmail", tbTravellerEmail.Text.Trim());
                 sqlCommand.Parameters.AddWithValue("@travellerPassword", tbTravellerPassword.Text.Trim());
                 sqlCommand.Parameters.AddWithValue("@travellerImage", travellerImage);
-
+                //===============================================================
                 //run SQL
                 try
                 {

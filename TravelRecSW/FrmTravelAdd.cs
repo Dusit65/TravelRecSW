@@ -57,6 +57,10 @@ namespace TravelRecSW
             {
                 ShareInfo.showWarningMSG("กรุณากรอกชื่อการเดินทาง");
             }
+            else if (pbTravelImage.Image == null)
+            {
+                ShareInfo.showWarningMSG("เลือกรูปภาพด้วย");
+            }
             else if (dtpTravelEndDate.Value < dtpTravelStartDate.Value)
             {
                 ShareInfo.showWarningMSG("วันที่กลับต้องไม่น้อยกว่าหรือวันเดียวกันกับวันที่ไป");
@@ -65,6 +69,7 @@ namespace TravelRecSW
             {
                 ShareInfo.showWarningMSG("ป้อนค่าใช้จ่านตลอดการเดินทางด้วย");
             }
+            
             else
             {
                 //sent data to DB
@@ -77,10 +82,9 @@ namespace TravelRecSW
                 conn.Open(); // Open the connection
                 //=========================================================================================================
                 //Sql Command
-                string strSql = "INSERT INTO travel_tb" +
-                                "(travelPlace, travelStartDate, travelEndDate, travelCostTotal, travelImage, travellerId)" +
-                                "VALUES " +
-                                 "(@travelPlace, @travelStartDate, @travelEndDate, @travelCostTotal, @travelImage, @travellerId)";
+                string strSql = "INSERT INTO travel_tb (travelPlace, travelStartDate, travelEndDate, travelCostTotal, travelImage, travellerId) " +
+                "VALUES (@travelPlace, @travelStartDate, @travelEndDate, @travelCostTotal, @travelImage, @travellerId)";
+
                 //=========================================================================================================
                 //create sql transaction and sql command for working with SQL
                 SqlTransaction sqlTransaction = conn.BeginTransaction();
@@ -117,7 +121,7 @@ namespace TravelRecSW
                     sqlTransaction.Rollback();
                     conn.Close();
 
-                    ShareInfo.showWarningMSG("Having an exception please try againg or call devleloper" + ex.Message);
+                    ShareInfo.showWarningMSG("Having an exception please try againg or call devleloper " + ex.Message + "TwT");
                 }
             }
         }

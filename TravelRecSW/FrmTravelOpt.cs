@@ -151,5 +151,69 @@ namespace TravelRecSW
                 getTravelFromDBToDGV();
             }
         }
+        //btDelete
+        private void tsbtDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvTravel.SelectedRows.Count == 0)
+            {
+                ShareInfo.showWarningMSG("เลือกรายการที่ต้องการลบ");
+            }
+            else
+            {
+                //MSG DIsplay
+                DialogResult dialogResult = MessageBox.Show("ต้องการลบใช่หรือไม่", "ยืนยัน",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (dgvTravel.SelectedRows.Count == 0)
+                    {
+                        ShareInfo.showWarningMSG("เลือกรายการที่ต้องการแก้ไข");
+                    }
+                    else
+                    {
+                        //Create Variable to store row index
+                        int indexRow = dgvTravel.CurrentRow.Index;
+                        //Create Variable to store travelId
+                        int travelId = int.Parse(dgvTravel.Rows[indexRow].Cells[3].Value.ToString());
+                        //Save to DB
+                        //connect to DB
+                        SqlConnection conn = new SqlConnection(ShareInfo.conStr);
+                        if (conn.State == ConnectionState.Open)
+                        {
+                            conn.Close();
+                        }
+                        conn.Open();
+                        //===============================================================
+                        //SQL command
+                        string strSql = "DELETE FROM travel_tb WHERE travelId = @travelId";
+                        //create sql transaction and sql command for working with SQL
+                        SqlTransaction sqlTransaction = conn.BeginTransaction();
+                        SqlCommand sqlCommand = new SqlCommand();
+                        sqlCommand.Connection = conn;
+                        sqlCommand.CommandType = CommandType.Text;
+                        sqlCommand.CommandText = strSql;
+                        sqlCommand.Transaction = sqlTransaction;
+                        //===============================================================
+                        //bindParam
+                        sqlCommand.Parameters.AddWithValue("@travelId", travelId);
+                        try
+                        {
+                            sqlCommand.ExecuteNonQuery();
+                            sqlTransaction.Commit();
+                            conn.Close();
+                            ShareInfo.showWarningMSG("ลบข้อมูลสำเร็จ");
+                            getTravelFromDBToDGV();
+                        }
+                        catch (Exception ex)
+                        {
+                            ShareInfo.showWarningMSG("ไม่สามารถลบข้อมูลได้");
+                            sqlCommand.Transaction.Rollback();
+                            conn.Close();
+                        }
+
+                    }
+                }
+            }
+        }
     }
 }

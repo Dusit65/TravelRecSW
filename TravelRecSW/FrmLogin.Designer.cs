@@ -80,6 +80,7 @@
             this.tbTravellerEmail.Name = "tbTravellerEmail";
             this.tbTravellerEmail.Size = new System.Drawing.Size(249, 22);
             this.tbTravellerEmail.TabIndex = 4;
+            this.tbTravellerEmail.Text = "D@gmail.com";
             // 
             // tbTravellerPassword
             // 
@@ -89,6 +90,7 @@
             this.tbTravellerPassword.PasswordChar = '*';
             this.tbTravellerPassword.Size = new System.Drawing.Size(249, 22);
             this.tbTravellerPassword.TabIndex = 5;
+            this.tbTravellerPassword.Text = "123456";
             // 
             // btLogin
             // 
